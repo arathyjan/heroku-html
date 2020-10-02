@@ -1,0 +1,6 @@
+{
+  "name": "hello-world-heroku-arathy",
+  "version": "1.0.0",
+  "description": "Hello World sample app",
+  "main": "index.js"
+}
