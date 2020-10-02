@@ -1,10 +1,12 @@
 var http = require('http');
+var fs = require('fs');
 
-var server = http.createServer(function(request, response) {
-
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("Hello World!");
-
+var server = http.createServer(function(request, res) {
+    fs.readFile('home.html',function (err, data){
+        res.writeHead(200, {'Content-Type': 'text/html','Content-Length':data.length});
+        res.write(data);
+        res.end();
+    });
 });
 
 var port = process.env.PORT || 3000;
